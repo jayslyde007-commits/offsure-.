@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offsure – global logistics and goods tracking. Track your shipment in real time.">
+  <title>Offsure | Global Logistics &amp; Goods Tracking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Offsure home">OFF<span>SURE</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#top">Home</a>
+        <a href="#track">Track</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-small">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Global logistics &amp; courier</p>
+      <h1>Your goods. <span>Always in sight.</span></h1>
+      <p class="hero-sub">Offsure moves freight across air, sea and road, and lets you follow every step of the journey with a single tracking number.</p>
+
+      <form class="track-form" id="heroTrackForm" autocomplete="off">
+        <label for="heroTrackInput" class="sr-only">Tracking number</label>
+        <input type="text" id="heroTrackInput" placeholder="Enter tracking number e.g. OFS123456789" required>
+        <button type="submit" class="btn">Track now</button>
+      </form>
+      <p class="hint">Try a demo number: <button type="button" class="link-btn" data-demo="OFS123456789">OFS123456789</button> · <button type="button" class="link-btn" data-demo="OFS555000111">OFS555000111</button> · <button type="button" class="link-btn" data-demo="OFS987654321">OFS987654321</button></p>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><strong data-count="120">0</strong><span>Countries served</span></div>
+      <div class="stat"><strong data-count="48000">0</strong><span>Shipments delivered</span></div>
+      <div class="stat"><strong data-count="99">0</strong><span>% on-time rate</span></div>
+      <div class="stat"><strong data-count="24">0</strong><span>Hour support</span></div>
+    </div>
+  </section>
+
+  <!-- ===== TRACKING ===== -->
+  <section class="section" id="track">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Shipment tracking</p>
+        <h2>Track your package</h2>
+        <p>Enter your Offsure tracking number to see where your goods are right now.</p>
+      </div>
+
+      <form class="track-form track-form-dark" id="trackForm" autocomplete="off">
+        <label for="trackInput" class="sr-only">Tracking number</label>
+        <input type="text" id="trackInput" placeholder="Tracking number" required>
+        <button type="submit" class="btn">Track</button>
+      </form>
+
+      <div id="trackError" class="alert" role="alert" hidden></div>
+
+      <div id="trackResult" class="result" hidden>
+        <div class="result-top">
+          <div>
+            <p class="label">Tracking number</p>
+            <h3 id="rNumber">—</h3>
+          </div>
+          <span class="badge" id="rStatus">—</span>
+        </div>
+
+        <div class="progress" aria-label="Shipment progress">
+          <div class="progress-bar"><div class="progress-fill" id="rProgress"></div></div>
+          <div class="progress-steps" id="rSteps"></div>
+        </div>
+
+        <div class="result-grid">
+          <div><p class="label">Origin</p><p id="rOrigin">—</p></div>
+          <div><p class="label">Destination</p><p id="rDest">—</p></div>
+          <div><p class="label">Service</p><p id="rService">—</p></div>
+          <div><p class="label">Weight</p><p id="rWeight">—</p></div>
+          <div><p class="label">Estimated delivery</p><p id="rEta">—</p></div>
+          <div><p class="label">Last known location</p><p id="rLast">—</p></div>
+        </div>
+
+        <h4 class="timeline-title">Shipment history</h4>
+        <ol class="timeline" id="rTimeline"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What we do</p>
+        <h2>Our services</h2>
+        <p>From a single parcel to full container loads, Offsure has a service built around your cargo.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+          </div>
+          <h3>Air freight</h3>
+          <p>Fast, reliable airfreight for time-critical shipments, with priority handling at major hubs.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 18l1.5 3h15L21 18H3zm1-2h16l-2-6h-4V6h-3v4H6l-2 6zM11 4h2v2h-2z"/></svg>
+          </div>
+          <h3>Sea freight</h3>
+          <p>FCL and LCL container shipping on major trade lanes at a cost that suits bulk cargo.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 5h11v9h1.5l2-4H21l2 3v5h-2a2.5 2.5 0 0 1-5 0H9a2.5 2.5 0 0 1-5 0H3V5zm4.5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+          </div>
+          <h3>Road transport</h3>
+          <p>Door-to-door trucking and last-mile delivery across cities, regions and borders.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2zm0 2.2L5.5 7.5 12 10.8l6.5-3.3L12 4.2zM5 9.2v7.1l6 3v-7.1l-6-3zm14 0l-6 3v7.1l6-3V9.2z"/></svg>
+          </div>
+          <h3>Warehousing</h3>
+          <p>Secure storage, inventory management and fulfilment to keep your supply chain moving.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5l8-3zm-1 13l6-6-1.4-1.4L11 12.2 8.4 9.6 7 11l4 4z"/></svg>
+          </div>
+          <h3>Cargo insurance</h3>
+          <p>Cover for loss and damage in transit so your goods are protected from pickup to delivery.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v3H4V4zm0 5h16v11H4V9zm4 3v2h8v-2H8z"/></svg>
+          </div>
+          <h3>Customs clearance</h3>
+          <p>Paperwork, duties and compliance handled by our brokers so shipments clear borders smoothly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div>
+        <p class="eyebrow">About Offsure</p>
+        <h2>Logistics you can follow, step by step</h2>
+        <p>Offsure is a logistics company built around one idea: you should never have to wonder where your goods are. Every shipment gets a unique tracking number and a live history, from pickup to the moment it lands at your door.</p>
+        <p>Our network of partners, warehouses and drivers covers more than 120 countries, and our support team is available around the clock to answer questions.</p>
+        <ul class="checks">
+          <li>Real-time tracking on every shipment</li>
+          <li>Transparent pricing with no hidden fees</li>
+          <li>Dedicated account support</li>
+          <li>Secure handling from pickup to delivery</li>
+        </ul>
+      </div>
+      <div class="about-panel">
+        <div class="about-box"><strong>2015</strong><span>Founded</span></div>
+        <div class="about-box"><strong>350+</strong><span>Team members</span></div>
+        <div class="about-box"><strong>40</strong><span>Warehouses</span></div>
+        <div class="about-box"><strong>5,000+</strong><span>Business clients</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="section section-alt" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Simple &amp; clear</p>
+        <h2>How it works</h2>
+      </div>
+      <div class="grid-4">
+        <div class="step"><span class="step-num">01</span><h3>Book</h3><p>Tell us what you are shipping and where it needs to go.</p></div>
+        <div class="step"><span class="step-num">02</span><h3>Pickup</h3><p>We collect your goods and issue your tracking number.</p></div>
+        <div class="step"><span class="step-num">03</span><h3>Track</h3><p>Follow every checkpoint online, any time.</p></div>
+        <div class="step"><span class="step-num">04</span><h3>Deliver</h3><p>Your goods arrive safely and on schedule.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+      </div>
+      <details class="faq">
+        <summary>Where do I find my tracking number?</summary>
+        <p>It is on your booking confirmation and on the waybill attached to your parcel. Tracking numbers start with "OFS".</p>
+      </details>
+      <details class="faq">
+        <summary>How often is tracking updated?</summary>
+        <p>Every time your shipment passes a checkpoint such as pickup, a hub, customs or the delivery vehicle.</p>
+      </details>
+      <details class="faq">
+        <summary>My tracking number is not found. What now?</summary>
+        <p>New numbers can take a few hours to appear. Check for typos, then contact our support team if it still does not show.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I change the delivery address?</summary>
+        <p>Yes, before the shipment is out for delivery. Contact us with your tracking number and the new address.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Contact us</h2>
+        <p>Need a quote or help with a shipment? Send us a message and we will reply within one business day.</p>
+        <ul class="contact-list">
+          <li><strong>Email</strong> support@offsure.com</li>
+          <li><strong>Phone</strong> +000 000 000 000</li>
+          <li><strong>Hours</strong> 24 hours, 7 days a week</li>
+        </ul>
+        <p class="small">Replace the placeholder details above with your real contact information.</p>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <label for="cName">Full name</label>
+        <input type="text" id="cName" required>
+        <label for="cEmail">Email</label>
+        <input type="email" id="cEmail" required>
+        <label for="cMsg">Message</label>
+        <textarea id="cMsg" rows="5" required></textarea>
+        <button type="submit" class="btn">Send message</button>
+        <p class="form-note" id="formNote" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="logo">OFF<span>SURE</span></a>
+      <p>&copy; <span id="year"></span> Offsure. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
